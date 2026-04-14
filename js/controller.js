@@ -5,7 +5,7 @@ const iniciar = () => {
     View.renderizarProductos(Model.state.productos);
     View.actualizarCarritoUI(Model.state.carrito, Model.calcularTotal());
 
-    // ✅ Carrito controlado por click (ya no por hover)
+    //  Carrito controlado por click (ya no por hover)
     const cartContainer = document.querySelector('.cart-container');
     const cartDropdown = document.getElementById('cart-dropdown');
 
