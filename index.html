@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech | Premium Electronics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">⚡</span> NovaTech
+        </div>
+        <div class="header-actions">
+            <div class="cart-container">
+                <span class="cart-icon">🛒</span> 
+                <span id="cart-count" class="badge">0</span>
+                <div id="cart-dropdown" class="cart-dropdown">
+                    <div id="cart-items-list"></div>
+                    <div class="cart-total-info">
+                        <strong>Total: $<span id="total-amount">0</span></strong>
+                    </div>
+                    <button id="btn-checkout" class="btn-pay">Pagar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="product-grid" class="container"></main>
+
+    <div id="modal-pago" class="modal-overlay" style="display: none;">
+        <div class="modal-content payment-card-ui">
+            <div class="payment-header">
+                <h2>Finalizar Compra</h2>
+                <p id="summary-total"></p>
+            </div>
+            
+            <form id="form-pago">
+                <div class="credit-card-shape">
+                    <div class="card-logo">VISA</div>
+                    <div class="chip"></div>
+                    <input type="text" id="input-tarjeta" placeholder="0000 0000 0000 0000" required class="card-number-input">
+                    <div class="form-row">
+                        <input type="text" id="input-fecha" placeholder="MM/AA" required class="card-mini-input">
+                        <input type="text" id="input-cvv" placeholder="CVV" required class="card-mini-input">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="input-nombre" placeholder="Nombre del Titular" required class="name-input">
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="submit" class="btn-confirm">Pagar con Seguridad 🔒</button>
+                    <button type="button" id="btn-cerrar" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-exito" class="modal-overlay" style="display: none;">
+        <div class="modal-content success-card">
+            <div class="success-icon">✓</div>
+            <h2>¡Pago Confirmado!</h2>
+            <p>Gracias por tu compra en NovaTech.</p>
+            <button id="btn-success-close" class="btn-confirm">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/controller.js"></script>
+</body>
+</html>
